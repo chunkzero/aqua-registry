@@ -2,11 +2,11 @@
 
 [aqua](https://aquaproj.github.io/) package definitions for Chunkzero command-line tools.
 
-| Package                 | Platforms                              | Status                       |
-| ----------------------- | -------------------------------------- | ---------------------------- |
-| `chunkzero/maven-r2`    | Linux, macOS, Windows; amd64 and arm64 | Available at `v0.1.0`        |
-| `chunkzero/rpp`         | Linux amd64                            | Stable and prerelease builds |
-| `chunkzero/rpp-nightly` | Linux amd64                            | Nightly builds only          |
+| Package                 | Platforms                                    | Status                       |
+| ----------------------- | -------------------------------------------- | ---------------------------- |
+| `chunkzero/maven-r2`    | Linux, macOS, Windows; amd64 and arm64       | Available at `v0.1.0`        |
+| `chunkzero/rpp`         | Linux, macOS; amd64 and arm64; Windows amd64 | Stable and prerelease builds |
+| `chunkzero/rpp-nightly` | Linux, macOS; amd64 and arm64; Windows amd64 | Nightly builds only          |
 
 `chunk` can be added once it publishes CLI binaries with a defined asset format. Window currently ships an rpp plugin rather than a standalone CLI.
 
@@ -23,12 +23,12 @@ registries:
     type: github_content
     repo_owner: chunkzero
     repo_name: aqua-registry
-    ref: v0.1.2
+    ref: v0.1.3
     path: registry.yaml
 packages:
   - name: chunkzero/maven-r2@v0.1.0
     registry: chunkzero-github
-  - name: chunkzero/rpp@v0.1.0-alpha.0
+  - name: chunkzero/rpp-nightly@v0.1.0-nightly.20261002.ge7fe09d0aa17
     registry: chunkzero-github
 ```
 
@@ -73,18 +73,18 @@ For mise, use the nightly-only entry to select the newest nightly across version
 
 ```toml
 [settings]
-aqua.registries = ["https://raw.githubusercontent.com/chunkzero/aqua-registry/v0.1.2/registry.yaml"]
+aqua.registries = ["https://raw.githubusercontent.com/chunkzero/aqua-registry/v0.1.3/registry.yaml"]
 
 [tools]
-"aqua:chunkzero/rpp-nightly" = { version = "latest", prerelease = true, minimum_release_age = "0s", os = ["linux/x64"] }
+"aqua:chunkzero/rpp-nightly" = { version = "latest", prerelease = true, minimum_release_age = "0s" }
 ```
 
 Both RPP entries install the `rpp` executable from the same release assets. The
 nightly entry filters out stable, alpha, beta, and release-candidate versions.
 `prerelease = true` enables GitHub prereleases; `minimum_release_age = "0s"`
 allows freshly published builds regardless of the machine's global setting.
-The platform restriction reflects the currently published Linux amd64 archive.
-Run `mise lock --bump --platform linux-x64 aqua:chunkzero/rpp-nightly` to select a
+Mise selects the native archive from the registry platform definitions.
+Run `mise lock --bump aqua:chunkzero/rpp-nightly` to select a
 new nightly, then commit `mise.lock`. Regular installs use the locked version.
 
 Nightly workflows live in the tool repositories; this repository only describes installation.
@@ -98,7 +98,7 @@ python3 -m venv .venv
 npx --yes prettier@3.6.2 --check .
 ```
 
-CI validates all three aqua configuration files against the pinned upstream schemas, installs the published `maven-r2` and nightly `rpp` versions with checksum verification, and type-checks a plugin with RPP’s bundled TypeScript compiler.
+CI validates all three aqua configuration files against the pinned upstream schemas, installs the published `maven-r2` and nightly `rpp` versions on Linux x64/arm64, macOS x64/arm64, and Windows x64 with checksum verification, and type-checks a plugin with RPP’s bundled TypeScript compiler.
 
 Nightly publishing is tracked in [rpp #76](https://github.com/chunkzero/rpp/issues/76), [chunk #317](https://github.com/chunkzero/chunk/issues/317), [maven-r2 #12](https://github.com/chunkzero/maven-r2/issues/12), and [Window #3](https://github.com/chunkzero/window/issues/3).
 

@@ -33,13 +33,24 @@ packages:
     repo_owner: chunkzero
     repo_name: rpp
     description: Modular and extensible Minecraft resource pack build tool
-    asset: rpp-{{trimV .Version}}-linux-x64.tar.gz
+    asset: rpp-{{trimV .Version}}-{{.OS}}-{{.Arch}}.tar.gz
     format: tar.gz
+    replacements:
+      amd64: x64
     supported_envs:
       - linux/amd64
+      - linux/arm64
+      - darwin/amd64
+      - darwin/arm64
+      - windows/amd64
     files:
       - name: rpp
-        src: rpp-{{trimV .Version}}-linux-x64/rpp
+        src: rpp-{{trimV .Version}}-{{.OS}}-{{.Arch}}/rpp
+    overrides:
+      - goos: windows
+        files:
+          - name: rpp
+            src: rpp-{{trimV .Version}}-{{.OS}}-{{.Arch}}/rpp.exe
     checksum:
       enabled: true
       type: github_release
@@ -55,13 +66,24 @@ packages:
     repo_name: rpp
     description: Nightly builds of the RPP resource pack build tool
     version_filter: 'Version contains "-nightly."'
-    asset: rpp-{{trimV .Version}}-linux-x64.tar.gz
+    asset: rpp-{{trimV .Version}}-{{.OS}}-{{.Arch}}.tar.gz
     format: tar.gz
+    replacements:
+      amd64: x64
     supported_envs:
       - linux/amd64
+      - linux/arm64
+      - darwin/amd64
+      - darwin/arm64
+      - windows/amd64
     files:
       - name: rpp
-        src: rpp-{{trimV .Version}}-linux-x64/rpp
+        src: rpp-{{trimV .Version}}-{{.OS}}-{{.Arch}}/rpp
+    overrides:
+      - goos: windows
+        files:
+          - name: rpp
+            src: rpp-{{trimV .Version}}-{{.OS}}-{{.Arch}}/rpp.exe
     checksum:
       enabled: true
       type: github_release
