@@ -1,0 +1,34 @@
+{
+  "checksums": [
+    {
+      "id": "github_release/github.com/chunkzero/maven-r2/v0.1.0/maven-r2-darwin-amd64",
+      "checksum": "2488BB9AE0F95B3BFFD7454C7A035B2B15288D9E97442898D2A53B5CD332EA8B",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/chunkzero/maven-r2/v0.1.0/maven-r2-darwin-arm64",
+      "checksum": "F8315F3AE2AC9B717BA58CC24AA5214EB228A9AD388422E058CA38D896460C68",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/chunkzero/maven-r2/v0.1.0/maven-r2-linux-amd64",
+      "checksum": "A4684C15B3C3A49EB659F59438CDB8E1C4C0F6AEEF2B1B340F523B34F5C7703F",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/chunkzero/maven-r2/v0.1.0/maven-r2-linux-arm64",
+      "checksum": "A69073F550EAE1BA81C1EB75DA0B25D680E67578833AB21D05C2F419F7A414F7",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/chunkzero/maven-r2/v0.1.0/maven-r2-windows-amd64.exe",
+      "checksum": "DDE5A3ABBC153E1D5BE4A6A6F7D2C8F91765E93AAA2D443691E3637C38C6B503",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/chunkzero/maven-r2/v0.1.0/maven-r2-windows-arm64.exe",
+      "checksum": "4AAD2598F4D80A242B7C44805ED78DADE7E39F2221CA214CEC2D263F433F166E",
+      "algorithm": "sha256"
+    }
+  ]
+}

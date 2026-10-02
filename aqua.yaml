@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/aquaproj/aqua/v2.63.0/json-schema/aqua-yaml.json
+checksum:
+  enabled: true
+  require_checksum: true
+registries:
+  - name: chunkzero
+    type: local
+    path: registry.yaml
+packages:
+  - name: chunkzero/maven-r2@v0.1.0
+    registry: chunkzero

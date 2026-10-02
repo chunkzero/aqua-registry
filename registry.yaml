@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/aquaproj/aqua/v2.63.0/json-schema/registry.json
+packages:
+  - name: chunkzero/maven-r2
+    type: github_release
+    repo_owner: chunkzero
+    repo_name: maven-r2
+    description: CLI for Maven repositories hosted on Cloudflare R2
+    asset: maven-r2-{{.OS}}-{{.Arch}}
+    format: raw
+    supported_envs:
+      - linux/amd64
+      - linux/arm64
+      - darwin/amd64
+      - darwin/arm64
+      - windows/amd64
+      - windows/arm64
+    overrides:
+      - goos: windows
+        asset: maven-r2-{{.OS}}-{{.Arch}}.exe
+    files:
+      - name: maven-r2
+    checksum:
+      enabled: true
+      type: github_release
+      asset: SHA256SUMS
+      algorithm: sha256
+      file_format: regexp
+      pattern:
+        checksum: "^([A-Fa-f0-9]{64})"
+        file: '^[A-Fa-f0-9]{64}\s+\*?(\S+)$'
+  - name: chunkzero/rpp
+    type: github_release
+    repo_owner: chunkzero
+    repo_name: rpp
+    description: Modular and extensible Minecraft resource pack build tool
+    asset: rpp-{{trimV .Version}}-linux-x64.tar.gz
+    format: tar.gz
+    supported_envs:
+      - linux/amd64
+    files:
+      - name: rpp
+        src: rpp-{{trimV .Version}}-linux-x64/rpp
+    checksum:
+      enabled: true
+      type: github_release
+      asset: "{{.Asset}}.sha256"
+      algorithm: sha256
+      file_format: regexp
+      pattern:
+        checksum: "^([A-Fa-f0-9]{64})"
+        file: '^[A-Fa-f0-9]{64}\s+\*?(\S+)$'

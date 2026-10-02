@@ -1,0 +1,39 @@
+name: Validate registry
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+      - run: npx --yes prettier@3.6.2 --check .
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - run: python -m pip install -r requirements-dev.txt
+      - run: python scripts/validate.py
+      - uses: aquaproj/aqua-installer@v4.0.5
+        with:
+          aqua_version: v2.63.0
+          policy_allow: "${{ github.workspace }}/aqua-policy.yaml"
+          skip_install_aqua: false
+          aqua_opts: "-l"
+        env:
+          AQUA_POLICY_CONFIG: ${{ github.workspace }}/aqua-policy.yaml
+          AQUA_GITHUB_TOKEN: ${{ github.token }}
+      - name: Verify published CLI
+        env:
+          AQUA_POLICY_CONFIG: ${{ github.workspace }}/aqua-policy.yaml
+          AQUA_GITHUB_TOKEN: ${{ github.token }}
+        run: test "$(aqua exec -- maven-r2 --version)" = v0.1.0
