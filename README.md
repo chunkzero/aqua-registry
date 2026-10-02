@@ -2,13 +2,14 @@
 
 [aqua](https://aquaproj.github.io/) package definitions for Chunkzero command-line tools.
 
-| Package                 | Platforms                                    | Status                       |
-| ----------------------- | -------------------------------------------- | ---------------------------- |
-| `chunkzero/maven-r2`    | Linux, macOS, Windows; amd64 and arm64       | Available at `v0.1.0`        |
-| `chunkzero/rpp`         | Linux, macOS; amd64 and arm64; Windows amd64 | Stable and prerelease builds |
-| `chunkzero/rpp-nightly` | Linux, macOS; amd64 and arm64; Windows amd64 | Nightly builds only          |
+| Package                   | Platforms                                    | Status                       |
+| ------------------------- | -------------------------------------------- | ---------------------------- |
+| `chunkzero/chunk-nightly` | Linux, macOS; amd64 and arm64; Windows amd64 | Nightly builds only          |
+| `chunkzero/maven-r2`      | Linux, macOS, Windows; amd64 and arm64       | Available at `v0.1.0`        |
+| `chunkzero/rpp`           | Linux, macOS; amd64 and arm64; Windows amd64 | Stable and prerelease builds |
+| `chunkzero/rpp-nightly`   | Linux, macOS; amd64 and arm64; Windows amd64 | Nightly builds only          |
 
-`chunk` can be added once it publishes CLI binaries with a defined asset format. Window currently ships an rpp plugin rather than a standalone CLI.
+Window currently ships an rpp plugin rather than a standalone CLI.
 
 ## Use
 
