@@ -49,3 +49,25 @@ packages:
       pattern:
         checksum: "^([A-Fa-f0-9]{64})"
         file: '^[A-Fa-f0-9]{64}\s+\*?(\S+)$'
+  - name: chunkzero/rpp-nightly
+    type: github_release
+    repo_owner: chunkzero
+    repo_name: rpp
+    description: Nightly builds of the RPP resource pack build tool
+    version_filter: 'Version contains "-nightly."'
+    asset: rpp-{{trimV .Version}}-linux-x64.tar.gz
+    format: tar.gz
+    supported_envs:
+      - linux/amd64
+    files:
+      - name: rpp
+        src: rpp-{{trimV .Version}}-linux-x64/rpp
+    checksum:
+      enabled: true
+      type: github_release
+      asset: "{{.Asset}}.sha256"
+      algorithm: sha256
+      file_format: regexp
+      pattern:
+        checksum: "^([A-Fa-f0-9]{64})"
+        file: '^[A-Fa-f0-9]{64}\s+\*?(\S+)$'
