@@ -2,10 +2,10 @@
 
 [aqua](https://aquaproj.github.io/) package definitions for Chunkzero command-line tools.
 
-| Package              | Platforms                              | Status                                |
-| -------------------- | -------------------------------------- | ------------------------------------- |
-| `chunkzero/maven-r2` | Linux, macOS, Windows; amd64 and arm64 | Available at `v0.1.0`                 |
-| `chunkzero/rpp`      | Linux amd64                            | Prepared for the first binary release |
+| Package              | Platforms                              | Status                        |
+| -------------------- | -------------------------------------- | ----------------------------- |
+| `chunkzero/maven-r2` | Linux, macOS, Windows; amd64 and arm64 | Available at `v0.1.0`         |
+| `chunkzero/rpp`      | Linux amd64                            | Available at `v0.1.0-alpha.0` |
 
 `chunk` can be added once it publishes CLI binaries with a defined asset format. Window currently ships an rpp plugin rather than a standalone CLI.
 
@@ -18,15 +18,17 @@ checksum:
   enabled: true
   require_checksum: true
 registries:
-  - name: chunkzero
+  - name: chunkzero-github
     type: github_content
     repo_owner: chunkzero
     repo_name: aqua-registry
-    ref: v0.1.0
+    ref: v0.1.1
     path: registry.yaml
 packages:
   - name: chunkzero/maven-r2@v0.1.0
-    registry: chunkzero
+    registry: chunkzero-github
+  - name: chunkzero/rpp@v0.1.0-alpha.0
+    registry: chunkzero-github
 ```
 
 Pin the registry to a release tag or commit SHA. Aqua treats refs as immutable, so do not use `main` or a moving tag.
@@ -50,7 +52,7 @@ Aqua installs a pinned GitHub prerelease just like a stable release. Build and p
 ```yaml
 packages:
   - name: chunkzero/rpp@v0.2.0-beta.1
-    registry: chunkzero
+    registry: chunkzero-github
 ```
 
 Keep the asset layout identical across stable, beta, and nightly releases. For rpp, the example beta needs `rpp-0.2.0-beta.1-linux-x64.tar.gz` and its `.sha256` file. The archive contains the matching top-level directory, the `rpp` executable, and its bundled toolchain.
@@ -59,7 +61,7 @@ Recommended publishing conventions:
 
 - Stable: `v0.2.0`, published as a normal GitHub release.
 - Beta: `v0.2.0-beta.1`, published as a prerelease.
-- Nightly: `v0.2.0-nightly.20261001.a1b2c3d`, published as a prerelease with a unique date and commit suffix.
+- Nightly: `v0.2.0-nightly.20261001.ga1b2c3d4e5f6`, published as a prerelease with a unique date and commit suffix.
 - Schedule nightlies daily, publish only when `main` has changed since the last successful nightly, and support manual dispatch.
 - Reuse release packaging and verification; publish checksums alongside every binary.
 - Use the full nightly version in the binary's version output and versioned archive names.
@@ -77,7 +79,7 @@ python3 -m venv .venv
 npx --yes prettier@3.6.2 --check .
 ```
 
-CI validates all three aqua configuration files against the pinned upstream schemas and installs the published `maven-r2` version with checksum verification. Unreleased package definitions receive schema validation until releases are available.
+CI validates all three aqua configuration files against the pinned upstream schemas, installs the published `maven-r2` and `rpp` versions with checksum verification, and type-checks a plugin with RPP’s bundled TypeScript compiler.
 
 Nightly publishing is tracked in [rpp #76](https://github.com/chunkzero/rpp/issues/76), [chunk #317](https://github.com/chunkzero/chunk/issues/317), [maven-r2 #12](https://github.com/chunkzero/maven-r2/issues/12), and [Window #3](https://github.com/chunkzero/window/issues/3).
 
