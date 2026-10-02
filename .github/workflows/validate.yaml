@@ -38,5 +38,5 @@ jobs:
           AQUA_GITHUB_TOKEN: ${{ github.token }}
         run: |
           test "$(aqua exec -- maven-r2 --version)" = v0.1.0
-          test "$(aqua exec -- rpp --version)" = "rpp 0.1.0-alpha.0"
+          test "$(aqua exec -- rpp --version)" = "rpp 0.1.0-nightly.20261002.g667e31110ca8"
           aqua exec -- rpp -C scripts/fixtures/rpp-plugin check

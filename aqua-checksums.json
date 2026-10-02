@@ -34,6 +34,11 @@
       "id": "github_release/github.com/chunkzero/rpp/v0.1.0-alpha.0/rpp-0.1.0-alpha.0-linux-x64.tar.gz",
       "checksum": "5AE77333312E7EA4A0A8D14C251E61CB95165AE42ECB757837A31B0CC2CBC320",
       "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/chunkzero/rpp/v0.1.0-nightly.20261002.g667e31110ca8/rpp-0.1.0-nightly.20261002.g667e31110ca8-linux-x64.tar.gz",
+      "checksum": "4A1C3B1595CC34A7AD057D5AF11F7EC6E914B69D2E371FCCBDBCF5F934E39C65",
+      "algorithm": "sha256"
     }
   ]
 }
