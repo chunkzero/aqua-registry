@@ -29,6 +29,11 @@
       "id": "github_release/github.com/chunkzero/maven-r2/v0.1.0/maven-r2-windows-arm64.exe",
       "checksum": "4AAD2598F4D80A242B7C44805ED78DADE7E39F2221CA214CEC2D263F433F166E",
       "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/chunkzero/rpp/v0.1.0-alpha.0/rpp-0.1.0-alpha.0-linux-x64.tar.gz",
+      "checksum": "5AE77333312E7EA4A0A8D14C251E61CB95165AE42ECB757837A31B0CC2CBC320",
+      "algorithm": "sha256"
     }
   ]
 }
