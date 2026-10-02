@@ -1,5 +1,38 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/aquaproj/aqua/v2.63.0/json-schema/registry.json
 packages:
+  - name: chunkzero/chunk-nightly
+    type: github_release
+    repo_owner: chunkzero
+    repo_name: chunk
+    description: Nightly builds of the Chunk CLI for building and running Minecraft apps
+    version_filter: 'Version contains "-nightly."'
+    asset: chunk-{{trimV .Version}}-{{.OS}}-{{.Arch}}.tar.gz
+    format: tar.gz
+    replacements:
+      amd64: x64
+    supported_envs:
+      - linux/amd64
+      - linux/arm64
+      - darwin/amd64
+      - darwin/arm64
+      - windows/amd64
+    files:
+      - name: chunk
+        src: chunk-{{trimV .Version}}-{{.OS}}-{{.Arch}}/chunk
+    overrides:
+      - goos: windows
+        files:
+          - name: chunk
+            src: chunk-{{trimV .Version}}-{{.OS}}-{{.Arch}}/chunk.exe
+    checksum:
+      enabled: true
+      type: github_release
+      asset: "{{.Asset}}.sha256"
+      algorithm: sha256
+      file_format: regexp
+      pattern:
+        checksum: "^([A-Fa-f0-9]{64})"
+        file: '^[A-Fa-f0-9]{64}\s+\*?(\S+)$'
   - name: chunkzero/maven-r2
     type: github_release
     repo_owner: chunkzero
