@@ -23,6 +23,27 @@ jobs:
           python-version: "3.13"
       - run: python -m pip install -r requirements-dev.txt
       - run: python scripts/validate.py
+
+  install:
+    needs: validate
+    strategy:
+      fail-fast: false
+      matrix:
+        runner:
+          [
+            ubuntu-24.04,
+            ubuntu-24.04-arm,
+            macos-15,
+            macos-15-intel,
+            windows-2025,
+          ]
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 10
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v6
       - uses: aquaproj/aqua-installer@v4.0.5
         with:
           aqua_version: v2.63.0
@@ -38,5 +59,5 @@ jobs:
           AQUA_GITHUB_TOKEN: ${{ github.token }}
         run: |
           test "$(aqua exec -- maven-r2 --version)" = v0.1.0
-          test "$(aqua exec -- rpp --version)" = "rpp 0.1.0-nightly.20261002.g667e31110ca8"
+          test "$(aqua exec -- rpp --version)" = "rpp 0.1.0-nightly.20261002.ge7fe09d0aa17"
           aqua exec -- rpp -C scripts/fixtures/rpp-plugin check
