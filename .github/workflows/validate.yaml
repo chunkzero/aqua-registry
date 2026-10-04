@@ -53,11 +53,12 @@ jobs:
         env:
           AQUA_POLICY_CONFIG: ${{ github.workspace }}/aqua-policy.yaml
           AQUA_GITHUB_TOKEN: ${{ github.token }}
-      - name: Verify published CLIs and bundled TypeScript compiler
+      - name: Verify published CLIs and bundled TypeScript compilers
         env:
           AQUA_POLICY_CONFIG: ${{ github.workspace }}/aqua-policy.yaml
           AQUA_GITHUB_TOKEN: ${{ github.token }}
         run: |
+          test "$(aqua exec -- chunk --version)" = "chunk 0.1.0-nightly.20261004.ge282f11816cd"
           test "$(aqua exec -- maven-r2 --version)" = v0.1.0
           test "$(aqua exec -- rpp --version)" = "rpp 0.1.0-nightly.20261004.g12336a991a34"
           aqua exec -- rpp -C scripts/fixtures/rpp-plugin check

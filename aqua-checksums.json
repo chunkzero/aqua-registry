@@ -1,6 +1,31 @@
 {
   "checksums": [
     {
+      "id": "github_release/github.com/chunkzero/chunk/v0.1.0-nightly.20261004.ge282f11816cd/chunk-0.1.0-nightly.20261004.ge282f11816cd-darwin-arm64.tar.gz",
+      "checksum": "1D82824F98310A7162E09950453D2F1C09F14A7AEBE16A5285D3BE242B35D077",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/chunkzero/chunk/v0.1.0-nightly.20261004.ge282f11816cd/chunk-0.1.0-nightly.20261004.ge282f11816cd-darwin-x64.tar.gz",
+      "checksum": "54C65F1D94889BA3A533C58E88490D90DCF222BFD2F50133429D6100A64167A1",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/chunkzero/chunk/v0.1.0-nightly.20261004.ge282f11816cd/chunk-0.1.0-nightly.20261004.ge282f11816cd-linux-arm64.tar.gz",
+      "checksum": "A7E3384E19A6BB41D10A3A4DD3EC2063870D6A0D9BBA7BE45C071C00B3379E3F",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/chunkzero/chunk/v0.1.0-nightly.20261004.ge282f11816cd/chunk-0.1.0-nightly.20261004.ge282f11816cd-linux-x64.tar.gz",
+      "checksum": "E707DC45481899D3D49B759695C602E000A828089FEA9430D23ABF5225BDC96A",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/chunkzero/chunk/v0.1.0-nightly.20261004.ge282f11816cd/chunk-0.1.0-nightly.20261004.ge282f11816cd-windows-x64.tar.gz",
+      "checksum": "F5A7A59EB990D7F7F5C4AF5C8902774DBD17CF62ABD4F18F6565EBEEF1A94FBD",
+      "algorithm": "sha256"
+    },
+    {
       "id": "github_release/github.com/chunkzero/maven-r2/v0.1.0/maven-r2-darwin-amd64",
       "checksum": "2488BB9AE0F95B3BFFD7454C7A035B2B15288D9E97442898D2A53B5CD332EA8B",
       "algorithm": "sha256"
