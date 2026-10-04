@@ -99,7 +99,7 @@ python3 -m venv .venv
 npx --yes prettier@3.6.2 --check .
 ```
 
-CI validates all three aqua configuration files against the pinned upstream schemas, installs the published `maven-r2` and nightly `rpp` versions on Linux x64/arm64, macOS x64/arm64, and Windows x64 with checksum verification, and type-checks a plugin with RPP’s bundled TypeScript compiler.
+CI validates all three aqua configuration files against the pinned upstream schemas, installs the published `maven-r2` and nightly `chunk` and `rpp` versions on Linux x64/arm64, macOS x64/arm64, and Windows x64 with checksum verification, and type-checks a plugin with RPP’s bundled TypeScript compiler.
 
 Nightly publishing is tracked in [rpp #76](https://github.com/chunkzero/rpp/issues/76), [chunk #317](https://github.com/chunkzero/chunk/issues/317), [maven-r2 #12](https://github.com/chunkzero/maven-r2/issues/12), and [Window #3](https://github.com/chunkzero/window/issues/3).
 

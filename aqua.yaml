@@ -7,6 +7,8 @@ registries:
     type: local
     path: registry.yaml
 packages:
+  - name: chunkzero/chunk-nightly@v0.1.0-nightly.20261004.ge282f11816cd
+    registry: chunkzero
   - name: chunkzero/maven-r2@v0.1.0
     registry: chunkzero
   - name: chunkzero/rpp-nightly@v0.1.0-nightly.20261002.ge7fe09d0aa17
