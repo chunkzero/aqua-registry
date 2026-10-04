@@ -28,7 +28,7 @@ registries:
 packages:
   - name: chunkzero/maven-r2@v0.1.0
     registry: chunkzero-github
-  - name: chunkzero/rpp-nightly@v0.1.0-nightly.20261002.ge7fe09d0aa17
+  - name: chunkzero/rpp-nightly@v0.1.0-nightly.20261004.g12336a991a34
     registry: chunkzero-github
 ```
 
