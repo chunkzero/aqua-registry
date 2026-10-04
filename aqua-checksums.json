@@ -64,6 +64,31 @@
       "id": "github_release/github.com/chunkzero/rpp/v0.1.0-nightly.20261002.ge7fe09d0aa17/rpp-0.1.0-nightly.20261002.ge7fe09d0aa17-windows-x64.tar.gz",
       "checksum": "CCFD0164A3E56A5C8B3BBF6C83DF1F78301CEB80ED0D9CEACD3D45E01F231C3C",
       "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/chunkzero/rpp/v0.1.0-nightly.20261004.g12336a991a34/rpp-0.1.0-nightly.20261004.g12336a991a34-darwin-arm64.tar.gz",
+      "checksum": "F765039156AC7280302727568A36A3DC8F71348D8C31CD59FAA22A9EEBE3F55D",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/chunkzero/rpp/v0.1.0-nightly.20261004.g12336a991a34/rpp-0.1.0-nightly.20261004.g12336a991a34-darwin-x64.tar.gz",
+      "checksum": "416A2D120A09A87FA8170B1B5C8D9B0F4FE47367C4FF21580198FE19006B7C64",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/chunkzero/rpp/v0.1.0-nightly.20261004.g12336a991a34/rpp-0.1.0-nightly.20261004.g12336a991a34-linux-arm64.tar.gz",
+      "checksum": "524DE97A82827B3AAC7CECA03CF3C7ED690A7CDBF5EE2A00DED160D8B050E53A",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/chunkzero/rpp/v0.1.0-nightly.20261004.g12336a991a34/rpp-0.1.0-nightly.20261004.g12336a991a34-linux-x64.tar.gz",
+      "checksum": "BF15269D8F4FEBF48CFE1A813CB583CF259A7B584527B08CE4F24A6D9EEB6A18",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/chunkzero/rpp/v0.1.0-nightly.20261004.g12336a991a34/rpp-0.1.0-nightly.20261004.g12336a991a34-windows-x64.tar.gz",
+      "checksum": "A1109F56C14D23E3B3C6BD1746B6D469A2E846ED911B56FC0C3D78AC2F6E425A",
+      "algorithm": "sha256"
     }
   ]
 }
